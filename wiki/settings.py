@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'cloudinary_storage',
+    'cloudinary',
     'clash',
     
 ]
@@ -95,6 +97,16 @@ REST_FRAMEWORK ={
         'rest_framework_simplejwt.authentication.JWTAuthentication',)
 
 }
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'ds7fwp3dv',
+    'API_KEY': '757125597647332',
+    'API_SECRET': 'aLejf5-Q_mikX7ph2m1GK23cmV0',
+}
+
+
+
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -132,7 +144,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 MEDIA_URL='/media/'
-MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
