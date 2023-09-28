@@ -20,12 +20,18 @@ from rest_framework import routers
 from clash.api import viewsets
 from django.conf.urls.static import static
 from django.conf import settings
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
+
 
 route = routers.DefaultRouter()
 
-route.register(r'heroes/', viewsets.heroesViewset, basename= 'heroes')
+route.register(r'heroes', viewsets.heroesViewset, basename= 'heroes')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(route.urls))
+    path('api/', include(route.urls)),
+    path('token/', TokenObtainPairView.as_view()),
+    path('token/refresh/', TokenRefreshView.as_view()),
+    
 ] +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

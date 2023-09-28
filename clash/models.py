@@ -5,4 +5,4 @@ def img(instance, filename):
 
 class heroes(models.Model):
     nivel =models.CharField(primary_key=True, max_length=1000)
-    image =models.ImageField(upload_to=img, blank=True, null=True)0
+    image =models.ImageField(upload_to=img, blank=True, null=True)
