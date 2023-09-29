@@ -2,13 +2,14 @@
 FROM python:3
 
 # Set the working directory in the container
-WORKDIR /api_c
+WORKDIR C:\std\api_c
+
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
 
 # Copy the application files into the working directory
 COPY . . 
-
-# Install the application dependencies
-RUN pip install -r requirements.txt
 
 # Define the entry point for the container
 CMD ["python", "manage.py", "runserver", "127.0.0.1:8000"]
