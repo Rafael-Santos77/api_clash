@@ -12,4 +12,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . . 
 
 # Define the entry point for the container
-CMD ["python", "manage.py", "runserver", ":8000"]
+CMD ["python", "manage.py", "runserver"]
