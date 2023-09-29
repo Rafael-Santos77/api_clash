@@ -1,6 +1,8 @@
 FROM python:3
 
-WORKDIR C:\std\api_c
+ARG ARG_NAME
+
+WORKDIR /std/api_c
 
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
