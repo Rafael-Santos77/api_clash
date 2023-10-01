@@ -26,11 +26,14 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 route = routers.DefaultRouter()
 
-route.register(r'heroes', viewsets.heroesViewset, basename= 'heroes')
+route.register(r'heroina', viewsets.HeroinaViewset, basename= 'heroina')
+route.register(r'king', viewsets.KingViewset, basename= 'king')
+route.register(r'quenn', viewsets.QuennViewset, basename= 'quenn')
+route.register(r'warden', viewsets.WardenViewset, basename= 'warden')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(route.urls)),
+    path('heroes/', include(route.urls)),
     path('token/', TokenObtainPairView.as_view()),
     path('token/refresh/', TokenRefreshView.as_view()),
     
