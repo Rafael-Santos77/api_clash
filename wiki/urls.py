@@ -30,6 +30,7 @@ route.register(r'heroina', viewsets.HeroinaViewset, basename= 'heroina')
 route.register(r'king', viewsets.KingViewset, basename= 'king')
 route.register(r'quenn', viewsets.QuennViewset, basename= 'quenn')
 route.register(r'warden', viewsets.WardenViewset, basename= 'warden')
+route.register(r'avatarheroes', viewsets.AvatarheroesViewset, basename= 'avatar')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

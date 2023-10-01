@@ -26,3 +26,9 @@ class HeroinaSerializer(serializers.ModelSerializer):
     class Meta:
         model= models.Heroina
         fields= '__all__'        
+
+
+class AvatarheroesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= models.Avatarheroes
+        fields= '__all__'       

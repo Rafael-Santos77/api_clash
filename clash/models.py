@@ -3,7 +3,9 @@ from django.db import models
 def img(instance, filename):
     return f"{instance.nivel}-{filename}"
 
-
+class Avatarheroes(models.Model):
+    nome_img = models.CharField(primary_key=True, max_length=20)
+    image =models.ImageField(upload_to=img, blank=True, null=True)
     
 
 
@@ -16,7 +18,6 @@ class Heroina(models.Model):
     upcost = models.IntegerField(db_column='UPcost', blank=True, null=True)  # Field name made lowercase.
     uptime = models.TextField(db_column='UPTime', blank=True, null=True)  # Field name made lowercase.
     th = models.IntegerField(db_column='TH', blank=True, null=True)  # Field name made lowercase.
-    image =models.ImageField(upload_to=img, blank=True, null=True)
     class Meta:
         managed = False
         db_table = 'Heroina'
@@ -30,7 +31,6 @@ class King(models.Model):
     upcost = models.IntegerField(db_column='UPcost', blank=True, null=True)  # Field name made lowercase.
     uptime = models.TextField(db_column='UPTime', blank=True, null=True)  # Field name made lowercase.
     th = models.IntegerField(db_column='TH', blank=True, null=True)  # Field name made lowercase.
-    image =models.ImageField(upload_to=img, blank=True, null=True)
     class Meta:
         managed = False
         db_table = 'King'
@@ -44,7 +44,6 @@ class Quenn(models.Model):
     upcost = models.IntegerField(db_column='UPcost', blank=True, null=True)  # Field name made lowercase.
     uptime = models.TextField(db_column='UPTime', blank=True, null=True)  # Field name made lowercase.
     th = models.IntegerField(db_column='TH', blank=True, null=True)  # Field name made lowercase.
-    image =models.ImageField(upload_to=img, blank=True, null=True)
     class Meta:
         managed = False
         db_table = 'Quenn'
@@ -59,7 +58,6 @@ class Warden(models.Model):
     upcost = models.IntegerField(db_column='UPcost', blank=True, null=True)  # Field name made lowercase.
     uptime = models.TextField(db_column='UPTime', blank=True, null=True)  # Field name made lowercase.
     th = models.IntegerField(db_column='TH', blank=True, null=True)  # Field name made lowercase.
-    image =models.ImageField(upload_to=img, blank=True, null=True)
     class Meta:
         managed = False
         db_table = 'Warden'
