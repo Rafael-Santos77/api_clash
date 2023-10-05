@@ -1,7 +1,7 @@
 from django.db import models
 
 def img(instance, filename):
-    return f"{instance.nivel}-{filename}"
+    return f"{instance.nome_img}-{filename}"
 
 class Avatarheroes(models.Model):
     nome_img = models.CharField(primary_key=True, max_length=20)

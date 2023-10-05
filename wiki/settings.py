@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-n0lo+7=y@s)%g@rk78$auu5z+m8)le&wtaf&*4t$-^=hy=6o9)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["api-teste-8vdx.onrender.com"]
+ALLOWED_HOSTS = ["api-teste-8vdx.onrender.com",
+                 "127.0.0.1"]
 
 
 # Application definition
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     'clash',
+    'corsheaders',
     
 ]
 
@@ -53,7 +55,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'wiki.urls'
 
