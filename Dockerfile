@@ -5,7 +5,7 @@ ARG ARG_NAME
 WORKDIR /std/api_c
 
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requerements.txt
 
 COPY . .
 
